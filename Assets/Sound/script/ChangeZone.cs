@@ -1,0 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class ChangeZone : MonoBehaviour
+{
+
+    public GameObject Player;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == Player)
+        {
+            Player.transform.position = new Vector3(0, 5, 0);
+        }
+        else
+        {
+            Destroy(other.gameObject);
+        }
+    }
+}
+
